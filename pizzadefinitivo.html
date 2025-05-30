@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pizzadef.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Pizzaria Bela Massa</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Pizzaria Bela Massa</h1>
+
+        <div class="hero">
+            <h2>As melhores pizzas da cidade!</h2>
+            <p>Venha experimentar nossas delícias da nossa região</p>
+       
+        <div class="menu">
+            <button onclick="mostrarcardapio('home')">
+                Início
+            </button>
+            <button onclick="mostrarcardapio('cadastrar')">
+                Cadastrar Pizza
+            </button>
+            <button onclick="mostrarcardapio('cardapio')">
+                Nosso Cardápio
+            </button>
+            <button onclick="mostrarcardapio('sobre')">
+                Sobre Nós
+            </button>
+            <button onclick="mostrarcardapio('contato')">
+                Contato
+            </button>
+
+            <button onclick="mostrarcardapio('pedidos')">Lista de Pedidos</button>
+        </div>
+    </div>
+
+    <div>
+        <!-- Aba de cardápio -->
+         <div id="cardapio" class="">
+            <h2>Nosssos Preços</h2>
+            <div class="cardapio-item">
+                <h3>Pizza de Calabresa</h3>
+                <p>Preço: R$ 25,50</p>
+                <button onclick="descrição">ingredientes</button>
+
+               
+                
+                <div class="cardapio-item">
+                    <h3>Pizza de Frago com Catupiry</h3>
+                    <p>Preço: R$ 28,50</p>
+                    <button onclick="descrição">ingredientes</button>
+
+                    
+
+                    <div class="cardapio-item">
+                        <h3>Pizza de Quatro Queijos</h3>
+                        <p>Preço: R$ 27,50</p>
+                        <button onclick="descrição">ingredientes</button>
+
+                        
+                        
+
+                    </div>
+
+                </div>
+                <div class="cardapio-item">
+                    <h3>Pizza Portuguesa</h3>
+                    <p>Preço: R$ 26,50</p>
+
+                    <button onclick="descrição">ingredientes</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cadastrar" class="hidden">
+        <h2>Cadastrar Pizza</h2>
+        <div class="form-group">
+            <label for="nome-piazza">Nome</label>
+            <input type="text" id="nome-piazza" placeholder="Digite o nome da pizza">
+        </div>
+        <div class="form-group">
+            <label for="pizza-preço">Preço</label>
+            <input type="text" id="pizza-preço" placeholder="Digite o preço da pizza">
+        </div>
+        <div class="form-group">
+            <label for="pizza-descricao">Descrição</label>
+            <input type="text" id="pizza-descricao" placeholder="Digite a descrição da pizza">
+        </div>
+        <button onclick="adicionarPizza()">Adicionar Pizza</button>
+    </div>
+    <div id="sobre" class="hidden">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma pizzaria com mais de 20 anos de tradição, oferecendo as melhores pizzas da cidade.</p>
+        <p>Nossa missão é proporcionar uma experiência única aos nossos clientes, com ingredientes frescos e de qualidade.</p>
+        <p>Venha nos visitar e experimente nossas delícias!</p>
+    </div>
+
+    <div id="pedidos" class="hidden">
+    <h2>Lista de Pedidos</h2>
+    <ul id="lista-pedidos">
+        <!-- Aqui os pedidos vão aparecer -->
+    </ul>
+</div>
+    <div id="contato" class="hidden">
+        <h2>Contato</h2>
+        <p>Email:belapizza@gmail.com</p>
+        <p>Telefone: (11) 1234-5678</p>
+        <p>Endereço: Rua das Pizzas, 123 - São Paulo, SP</p>
+    </div>
+    <script src="pizzadef.js"></script>
+</body>
+</html>
