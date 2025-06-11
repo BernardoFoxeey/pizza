@@ -32,7 +32,13 @@
                 Contato
             </button>
 
-            <button onclick="mostrarcardapio('pedidos')">Lista de Pedidos</button>
+            <button onclick="mostrarcardapio('pedidos')">
+                Lista de Pedidos
+            </button>
+
+            <button onclick="mostrarcardapio('consultar')">
+                Consultar Pizza
+            </button>      
         </div>
     </div>
 
@@ -44,32 +50,21 @@
                 <h3>Pizza de Calabresa</h3>
                 <p>Preço: R$ 25,50</p>
                 <button onclick="descrição">ingredientes</button>
-
-               
-                
                 <div class="cardapio-item">
                     <h3>Pizza de Frago com Catupiry</h3>
                     <p>Preço: R$ 28,50</p>
                     <button onclick="descrição">ingredientes</button>
-
-                    
-
                     <div class="cardapio-item">
                         <h3>Pizza de Quatro Queijos</h3>
                         <p>Preço: R$ 27,50</p>
                         <button onclick="descrição">ingredientes</button>
-
-                        
-                        
-
                     </div>
-
                 </div>
                 <div class="cardapio-item">
                     <h3>Pizza Portuguesa</h3>
                     <p>Preço: R$ 26,50</p>
-
                     <button onclick="descrição">ingredientes</button>
+                </div>
             </div>
         </div>
     </div>
@@ -110,5 +105,90 @@
         <p>Endereço: Rua das Pizzas, 123 - São Paulo, SP</p>
     </div>
     <script src="pizzadef.js"></script>
+
+    <div id="pagamento" class="hidden">
+        <h2>Forma de Pagamento</h2>
+        <div class="form-group">
+            <label for="nome-comprador">Nome do Comprador</label>
+            <input type="text" id="nome-comprador" placeholder="Digite o nome do comprador">
+        </div>
+        <div class="form-group">
+            <label for="pizza-pedido">Pizza</label>
+            <input type="text" id="pizza-pedido" placeholder="Nome da pizza" readonly>
+        </div>
+        <div class="form-group">
+            <label for="valor-pizza">Valor</label>
+            <input type="text" id="valor-pizza" placeholder="Valor da pizza" readonly>
+        </div>
+        <div class="form-group">
+            <label for="metodo-pagamento">Método de Pagamento</label>
+            <select id="metodo-pagamento">
+                <option value="pix">Pix</option>
+                <option value="dinheiro">Dinheiro</option>
+            </select>
+        </div>
+        <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </div>
+
+    <div id="consultar" class="hidden">
+        <h2>Consultar Pizza</h2>
+        <div class="form-group">
+            <label for="consulta-nome-pizza">Nome da Pizza</label>
+            <input type="text" id="consulta-nome-pizza" placeholder="Digite o nome da pizza para consultar">
+        </div>
+        <button onclick="consultarPizza()">Consultar</button>
+        <div id="resultado-consulta" class="cardapio-item">
+            <!-- O resultado da consulta será exibido aqui -->
+        </div>
+    </div>
+
+    <div id="mensagens" class="hidden">
+        <h2>Mensagens do Sistema</h2>
+        <div id="area-mensagens">
+            <!-- As mensagens do sistema serão exibidas aqui -->
+        </div>
+    </div>
+
+    <div id="Alterar" class="hidden">
+        <h2>Alterar Pizza</h2>
+        <div class="form-group">
+            <label for="alterar-nome-pizza">Nome da Pizza</label>
+            <input type="text" id="alterar-nome-pizza" placeholder="Digite o nome da pizza para alterar">
+        </div>
+        <div class="form-group">
+            <label for="alterar-preco-pizza">Novo Preço</label>
+            <input type="text" id="alterar-preco-pizza" placeholder="Digite o novo preço da pizza">
+        </div>
+        <div class="form-group">
+            <label for="alterar-descricao-pizza">Nova Descrição</label>
+            <input type="text" id="alterar-descricao-pizza" placeholder="Digite a nova descrição da pizza">
+        </div>
+        <button onclick="confirmarAlteracaoPizza()">Confirmar Alteração</button>
+    </div>
+
+    <div id="AlterarPedido" class="hidden">
+        <h2>Alterar Pedido</h2>
+        <div class="form-group">
+            <label for="alterar-pedido-comprador">Nome do Comprador</label>
+            <input type="text" id="alterar-pedido-comprador" placeholder="Digite o nome do comprador">
+        </div>
+        <div class="form-group">
+            <label for="alterar-pedido-pizza">Pizza</label>
+            <input type="text" id="alterar-pedido-pizza" placeholder="Nome da pizza">
+        </div>
+        <div class="form-group">
+            <label for="alterar-pedido-valor">Valor</label>
+            <input type="text" id="alterar-pedido-valor" placeholder="Valor da pizza">
+        </div>
+        <div class="form-group">
+            <label for="alterar-pedido-metodo">Método de Pagamento</label>
+            <select id="alterar-pedido-metodo">
+                <option value="pix">Pix</option>
+                <option value="dinheiro">Dinheiro</option>
+            </select>
+        </div>
+        <button onclick="confirmarAlteracaoPedido()">Confirmar Alteração do Pedido</button>
+    </div>
+
 </body>
 </html>
